@@ -1,0 +1,9 @@
+
+@use 'custom' as *;
+@use 'variables' as *;
+
+@import 'bootstrap/scss/bootstrap';
+
+html, body {
+    overflow-x: hidden;
+}
