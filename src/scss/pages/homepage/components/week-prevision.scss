@@ -1,1 +1,25 @@
 @use '../../../variables.scss' as *;
+
+
+.week-prevision {
+
+    .row-week {
+        gap: 1rem;
+        .week {
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+    
+            p {
+                margin-bottom: 0;
+            }
+    
+            &:not(:last-child) {
+            border-bottom: 1px var(--grey-text) solid;
+    
+            }
+        }
+    }
+}

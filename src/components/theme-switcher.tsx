@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import lune from '../assets/img/icons/moon.svg'; // Assurez-vous que l'image lune.png existe
+import soleil from '../assets/img/icons/soleil.svg'; // Assurez-vous que l'image soleil.svg existe
 
 const applyTheme = (theme: string) => {
   const body = document.body;
   body.classList.remove('light-theme', 'dark-theme');
   body.classList.add(theme);
+
+  // Dispatch custom event to notify the change
+  const event = new Event('classChange');
+  document.body.dispatchEvent(event);
 };
 
 const ThemeSwitcher: React.FC = () => {
@@ -28,8 +34,8 @@ const ThemeSwitcher: React.FC = () => {
   };
 
   return (
-    <button onClick={toggleTheme}>
-      {isDarkMode ? 'Mode clair' : 'Mode sombre'}
+    <button onClick={toggleTheme} aria-label={isDarkMode ? 'Mode clair' : 'Mode sombre'} className='bouton-theme'>
+      <img src={isDarkMode ? lune : soleil} alt={isDarkMode ? 'Lune' : 'Soleil'} />
     </button>
   );
 };

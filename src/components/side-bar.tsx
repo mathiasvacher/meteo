@@ -11,7 +11,6 @@ function Sidebar() {
           <img src={logoSite} alt="Site Logo" className='logo'/>
         </a>
         <ThemeSwitcher />
-        <h1> Sidebar</h1>
       </div>
 
       </>
