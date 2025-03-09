@@ -1,0 +1,39 @@
+@use '../../../variables.scss' as *;
+
+
+.search-bar {
+    padding: 1rem !important;
+    min-height: 2rem;
+
+    input {
+        background-color: transparent !important;
+        border: none !important;
+        width: 100%;
+        height: 100%;
+        color: var(--text-color) !important;
+        
+        &:focus {
+            outline: none !important;
+        }
+    }
+
+    .suggestions-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        background-color: #fff;
+      }
+      
+      .suggestions-list li {
+        padding: 8px;
+        cursor: pointer;
+      }
+      
+      .suggestions-list li:hover {
+        background-color: #f0f0f0;
+      }
+      
+}

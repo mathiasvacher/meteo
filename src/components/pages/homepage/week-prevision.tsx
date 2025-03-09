@@ -4,7 +4,9 @@ function Weekprevision() {
   
     return (
       <>
-        <h1> Weekprevision </h1>
+        <div className="box">
+          <h1> Weekprevision </h1>
+        </div>
       </>
     );
 }

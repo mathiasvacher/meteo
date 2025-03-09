@@ -1,0 +1,25 @@
+// Thème Clair
+$light-background-color: #ffffff;
+$light-background-color-box: #f0f0f0;
+
+$light-text-color: #000000;
+$light-grey-text: #666666;
+
+// Thème Sombre
+$dark-background-color: rgba(14, 18, 29, 1);
+$dark-background-color-box: rgba(34, 43, 58, 1);
+
+$dark-text-color: #ffffff;
+$dark-grey-text: rgb(99, 106, 122);
+
+// Fonts :
+$font-outfit: "Outfit", serif;
+$font-clash: 'ClashDisplay-Variable';
+
+// Textes :
+$paragraph-size: 1rem;
+$title-size: clamp(1.3rem, calc(1.1rem + 1vw), 1.5rem);
+
+// Spacing :
+$spacing-section: 5rem;
+$spacing-title-content: 2rem;

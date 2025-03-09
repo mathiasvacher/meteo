@@ -1,0 +1,19 @@
+@use '../../variables.scss' as *;
+
+
+.row-page {
+    .sidebar-page {
+
+    }
+
+    .middle-page {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+    }
+
+    .weekpev-page {
+
+    }
+}

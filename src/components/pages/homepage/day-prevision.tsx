@@ -4,7 +4,9 @@ function Dayprevision() {
   
     return (
       <>
-        <h1> Dayprevision </h1>
+        <div className="box">
+          <h1> Dayprevision </h1>
+        </div>
       </>
     );
 }

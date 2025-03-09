@@ -1,9 +1,21 @@
 
 @use 'custom' as *;
 @use 'variables' as *;
+@use 'theme' as *;
+@use 'basic' as *;
+
+@use 'pages/homepage/homepage.scss' as *;
+@use 'pages/homepage/side-bar.scss' as *;
+
+@use 'pages/homepage/components/current-data.scss' as *;
+@use 'pages/homepage/components/day-prevision.scss' as *;
+@use 'pages/homepage/components/miscellaneous.scss' as *;
+@use 'pages/homepage/components/search-bar.scss' as *;
+@use 'pages/homepage/components/week-prevision.scss' as *;
 
 @import 'bootstrap/scss/bootstrap';
 
 html, body {
     overflow-x: hidden;
+    margin: 1rem 0;
 }

@@ -1,0 +1,33 @@
+/* theme.scss */
+@use 'variables' as *;  // Import des variables SCSS
+
+/* Thème Clair */
+.light-theme {
+  --background-color: #{$light-background-color};  // Injection de la variable SCSS
+  --background-color-box: #{$light-background-color-box};
+  --text-color: #{$light-text-color};
+  --grey-text: #{$light-grey-text};
+}
+
+/* Thème Sombre */
+.dark-theme {
+  --background-color: #{$dark-background-color};
+  --background-color-box: #{$dark-background-color-box};
+  --text-color: #{$dark-text-color};
+  --grey-text: #{$dark-grey-text};
+}
+
+/* Global */
+body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+
+.box {
+  background-color: var(--background-color-box) !important;
+}
+
+.text-grey {
+  color: var(--grey-text) !important;
+}

@@ -4,7 +4,9 @@ function Searchbar() {
   
     return (
       <>
-        <h1> Searchbar</h1>
+        <div className="box search-bar">
+          <input name="location" placeholder="Cherchez votre ville" />
+        </div>
       </>
     );
 }

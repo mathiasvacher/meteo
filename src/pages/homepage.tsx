@@ -10,13 +10,24 @@ function Homepage() {
   
     return (
       <>
-        <Sidebar />
-        <Searchbar />
-        <Currentdata />
-        <Currentdata />
-        <Dayprevision />
-        <Weekprevision />
-        <Miscellaneous />
+        <div className="container-fluid">
+          <div className="row row-page">
+            <div className="sidebar-page col-3">
+              <Sidebar />
+            </div>
+
+            <div className="middle-page col-13">
+              <Searchbar />
+              <Currentdata />
+              <Dayprevision />
+              <Miscellaneous />
+            </div>
+
+            <div className="weekprev-page col-8">
+              <Weekprevision />
+            </div>
+          </div>
+        </div>
       </>
     );
 }

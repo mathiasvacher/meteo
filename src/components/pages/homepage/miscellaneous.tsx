@@ -4,7 +4,9 @@ function Miscellaneous() {
   
     return (
       <>
-        <h1> Miscellaneous </h1>
+        <div className="box">
+          <h1> Miscellaneous </h1>
+        </div>
       </>
     );
 }
