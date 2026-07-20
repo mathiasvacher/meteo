@@ -1,2 +1,11 @@
-
-@use '../../../variables.scss' as *;
+.current-data { min-height: 300px; padding: 27px; color: #fff; border: 0; overflow: hidden; background: radial-gradient(circle at 90% 12%, rgba(255,255,255,.26), transparent 9rem), linear-gradient(140deg, #0b68eb 0%, #398cf7 55%, #76bdf6 100%); box-shadow: 0 18px 35px rgba(24,121,255,.18); }
+.current-data .eyebrow { color: rgba(255,255,255,.72); }
+.current-topline { display: flex; justify-content: space-between; margin-top: 18px; }
+.current-topline h1 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.055em; }
+.current-topline p { margin: 7px 0 0; font-size: 1rem; opacity: .88; }
+.weather-symbol { margin-top: -4px; font-size: 4rem; filter: drop-shadow(0 6px 8px rgba(0,0,0,.1)); }
+.temperature-line { display: flex; align-items: baseline; gap: 12px; margin-top: 25px; }
+.temperature-line strong { font-size: clamp(4.6rem, 9vw, 6.5rem); font-weight: 500; line-height: .8; letter-spacing: -.085em; }
+.temperature-line span { font-size: .9rem; opacity: .85; }
+.wind-pill { display: inline-block; margin-top: 30px; padding: 8px 11px; border: 1px solid rgba(255,255,255,.25); border-radius: 99px; font-size: .82rem; background: rgba(255,255,255,.14); }
+@media (max-width: 520px) { .current-data { min-height: 278px; padding: 22px; }.weather-symbol { font-size: 3.25rem; }.temperature-line strong { font-size: 4.7rem; } }

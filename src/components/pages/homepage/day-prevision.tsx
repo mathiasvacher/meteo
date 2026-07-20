@@ -1,3 +1,5 @@
+import { weatherIcon } from "../../../utils/weather";
+
 function Dayprevision({
   hourly,
 }: {
@@ -41,7 +43,7 @@ function Dayprevision({
       if (hour >= nextStartHour && result.length < 6) {
         result.push({
           timeRange: `${hour}:00`,  // Afficher uniquement l'heure de début de la tranche
-          tempRange: `${Math.round(temperatures[i])}°C / ${Math.round(temperatures[i + 1])}°C`,
+          tempRange: `${Math.round(temperatures[i])}°`,
           weather: weatherCodes[i],
         });
         nextStartHour = hour + 2; // Passer à la prochaine tranche de 2 heures
@@ -63,27 +65,18 @@ function Dayprevision({
   };
 
   return (
-    <div className="box day-prevision ">
-      <h2 className="">Prévisions horaires</h2>
-      <div className="">
-        <div className="row row-day">
+    <section className="tile day-prevision">
+      <div className="tile-heading"><div><div className="eyebrow">Aujourd’hui</div><h2>À venir</h2></div><span>Prochaines heures</span></div>
+        <div className="hourly-list">
           {limitedTimeSlots.map((slot, index) => (
-            <div key={index} className="col day text-center">
-              <p><strong>{formatTime(slot.timeRange)}</strong></p> {/* Affiche l'heure de début */}
-              <img
-                src={`/icons/${slot.weather}.png`}
-                alt="Météo"
-                width={40}
-                height={40}
-              />
-              <p>
-                <strong>{slot.tempRange}</strong>
-              </p>
+            <div key={index} className="hour-card">
+              <span>{index === 0 ? "Maint." : formatTime(slot.timeRange)}</span>
+              <span className="hour-icon">{weatherIcon(slot.weather)}</span>
+              <strong>{slot.tempRange}</strong>
             </div>
           ))}
         </div>
-      </div>
-    </div>
+    </section>
   );
 }
 

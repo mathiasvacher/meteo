@@ -18,8 +18,9 @@ const ThemeSwitcher: React.FC = () => {
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
-      setIsDarkMode(savedTheme === 'dark');
-      applyTheme(savedTheme);
+      const shouldUseDarkTheme = savedTheme === 'dark-theme' || savedTheme === 'dark';
+      setIsDarkMode(shouldUseDarkTheme);
+      applyTheme(shouldUseDarkTheme ? 'dark-theme' : 'light-theme');
     } else {
       // Par défaut, on choisit le thème clair
       applyTheme('light-theme');

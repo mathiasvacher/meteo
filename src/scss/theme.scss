@@ -1,33 +1,25 @@
-/* theme.scss */
-@use 'variables' as *;  // Import des variables SCSS
-
-/* Thème Clair */
-.light-theme {
-  --background-color: #{$light-background-color};  // Injection de la variable SCSS
-  --background-color-box: #{$light-background-color-box};
-  --text-color: #{$light-text-color};
-  --grey-text: #{$light-grey-text};
+body.light-theme {
+  --background-color: #f5f5f7;
+  --background-color-box: #ffffff;
+  --text-color: #1d1d1f;
+  --grey-text: #6e6e73;
+  --line-color: rgba(60, 60, 67, .14);
+  --accent: #146ef5;
+  --bs-body-bg: #f5f5f7;
+  --bs-body-color: #1d1d1f;
 }
 
-/* Thème Sombre */
-.dark-theme {
-  --background-color: #{$dark-background-color};
-  --background-color-box: #{$dark-background-color-box};
-  --text-color: #{$dark-text-color};
-  --grey-text: #{$dark-grey-text};
+body.dark-theme {
+  --background-color: #090a0d;
+  --background-color-box: #1a1b20;
+  --text-color: #f5f5f7;
+  --grey-text: #9d9da3;
+  --line-color: rgba(235, 235, 245, .13);
+  --accent: #62a5ff;
+  --bs-body-bg: #090a0d;
+  --bs-body-color: #f5f5f7;
 }
 
-/* Global */
-body {
-  background-color: var(--background-color) !important;
-  color: var(--text-color) !important;
-}
-
-
-.box {
-  background-color: var(--background-color-box) !important;
-}
-
-.text-grey {
-  color: var(--grey-text) !important;
-}
+body.light-theme, body.dark-theme { min-height: 100vh; background: var(--background-color) !important; color: var(--text-color) !important; transition: background-color .28s ease, color .28s ease; }
+body.dark-theme .weather-app { background: radial-gradient(circle at 72% 0%, rgba(41, 97, 183, .15), transparent 34rem); }
+body.dark-theme input { color: var(--text-color) !important; }

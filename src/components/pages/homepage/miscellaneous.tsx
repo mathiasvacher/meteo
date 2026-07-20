@@ -1,13 +1,12 @@
-// Données sur l'air, UV Index, et autres (ouvrable avec bouton voir plus)
+import { WeatherData } from "../../../services/weather-service";
 
-function Miscellaneous() {
+function Miscellaneous({ weather }: { weather: WeatherData }) {
   
     return (
-      <>
-        <div className="box">
-          <h1> Miscellaneous </h1>
-        </div>
-      </>
+      <section className="details-grid">
+        <article className="tile detail-tile"><span className="eyebrow">Humidité</span><strong>💧 {weather.humidity}%</strong><p>Dans l’air actuellement</p></article>
+        <article className="tile detail-tile"><span className="eyebrow">Précipitations</span><strong>☔ {weather.precipitation} mm</strong><p>Relevé en cours</p></article>
+      </section>
     );
 }
   

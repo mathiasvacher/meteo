@@ -1,16 +1,8 @@
-@use '../../../variables.scss' as *;
-
-
-.day-prevision {
-
-    .day {
-        p {
-            margin-bottom: 0;
-        }
-        &:not(:last-child) {
-            border-right: 1px var(--grey-text) solid;
-        }
-    }
-
-
-}
+.day-prevision { min-width: 0; padding: 24px; }
+.tile-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.tile-heading h2 { margin: 3px 0 0; font-size: 1.4rem; letter-spacing: -.035em; }
+.tile-heading > span { color: var(--grey-text); font-size: .8rem; }
+.hourly-list { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-top: 20px; }
+.hour-card { min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 12px 4px; border-radius: 16px; background: rgba(127,127,127,.08); font-size: .78rem; }
+.hour-card > span:first-child { color: var(--grey-text); }.hour-icon { font-size: 1.35rem; }.hour-card strong { font-size: 1rem; }
+@media (max-width: 520px) { .day-prevision { padding: 20px 14px; }.hourly-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }.hour-card { min-width: 0; } }

@@ -10,6 +10,7 @@ import Miscellaneous from "./../components/pages/homepage/miscellaneous.tsx";
 
 function Homepage() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [error, setError] = useState(false);
   const [coords, setCoords] = useState({ lat: 45.750000, lon: 4.850000 }); // Paris par défaut
   const [city, setCity] = useState("Lyon"); // Ajouter un état pour la ville
 
@@ -17,10 +18,12 @@ function Homepage() {
   useEffect(() => {
     const getWeather = async () => {
       try {
+        setError(false);
         const data = await fetchWeather(coords.lat, coords.lon, city); // Passer la ville
         setWeather(data);
       } catch (error) {
         console.error("Erreur lors de la récupération des données météo :", error);
+        setError(true);
       }
     };
     getWeather();
@@ -32,37 +35,23 @@ function Homepage() {
   };
 
   return (
-    <div className="container-fluid">
-      <div className="row row-page">
-        <div className="sidebar-page col-3">
-          <Sidebar />
-        </div>
+    <main className="weather-app">
+      <header className="app-header">
+        <Sidebar />
+        <Searchbar onSelect={handleCitySelect} />
+      </header>
 
-        <div className="middle-page col-13">
-          <Searchbar onSelect={handleCitySelect} />
-          {weather ? (
-            <>
-              <Currentdata
-                weather={{
-                  location: city,
-                  temperature: weather.temperature,
-                  windspeed: weather.windspeed,
-                }}
-              />
-              <Dayprevision hourly={weather.hourly} />
-              <Miscellaneous />
-            </>
-          ) : (
-            <p>Chargement des données météo...</p>
-          )}
-
+      {weather ? (
+        <div className="weather-grid">
+          <Currentdata weather={{ location: city, temperature: weather.temperature, windspeed: weather.windspeed, apparentTemperature: weather.apparentTemperature, weatherCode: weather.weatherCode, isDay: weather.isDay }} />
+          <Dayprevision hourly={weather.hourly} />
+          <Miscellaneous weather={weather} />
+          <Weekprevision daily={weather.daily} />
         </div>
-
-        <div className="weekprev-page col-8">
-          {weather && <Weekprevision daily={weather.daily} />}
-        </div>
-      </div>
-    </div>
+      ) : (
+        <div className="state-card">{error ? "Impossible de charger la météo. Vérifiez votre connexion puis réessayez." : "Chargement de la météo…"}</div>
+      )}
+    </main>
   );
 }
 
